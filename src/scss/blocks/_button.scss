@@ -1,0 +1,75 @@
+@use '../common/doc' as *;
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: $color-primary;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+        opacity: 0.75;
+    }
+
+    &--search {
+        justify-self: end;
+    }
+
+    &--settings {
+        @media screen and (min-width: $breakpoint-tablet) {
+            position: relative;
+            margin-left: 26px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 32px;
+                left: -21px;
+                width: 2px;
+                background-color: $color-border;
+                border-radius: 1px;
+            }
+        }
+    }
+
+    &--close-menu {
+        @media screen and (min-width: $breakpoint-desktop) {
+            display: none;
+        }
+    }
+
+    &--order {
+        width: 119px;
+        height: 32px;
+        border-radius: 16px;
+        color: $color-white;
+        padding: 4px 8px 4px 12px;
+        font-size: 12px;
+        font-weight: 700;
+        justify-content: space-between;
+        text-transform: uppercase;
+        line-height: 24px;
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            position: static;
+        }
+    }
+
+    &--close-feedback,
+    &--close-callback {
+        @media screen and (min-width: $breakpoint-tablet) {
+            position: absolute;
+            left: -72px;
+            top: 32px;
+        }
+    }
+}
+

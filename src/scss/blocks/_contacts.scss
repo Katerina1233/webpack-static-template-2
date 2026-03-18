@@ -1,0 +1,15 @@
+@use '../common/doc' as *;
+
+.contacts {
+    &__email {
+        font-style: normal;
+        font-weight: 500;
+    }
+
+    &__phone-number {
+        font-style: normal;
+        font-size: 24px;
+        font-weight: 700;
+    }
+}
+

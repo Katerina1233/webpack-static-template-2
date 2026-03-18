@@ -1,0 +1,11 @@
+@use '../common/doc' as *;
+
+.content {
+    background-color: $color-background;
+
+    //@media screen and (min-width: $breakpoint-desktop) {
+    //    flex: 1;
+    //    min-width: 0;
+    //}
+}
+

@@ -1,0 +1,15 @@
+@use '../common/doc' as *;
+
+.language {
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+        color: $color-text-secondary;
+    }
+
+    &--checked {
+        color: $color-text-secondary;
+    }
+}
+

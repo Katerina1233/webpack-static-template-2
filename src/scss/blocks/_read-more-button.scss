@@ -1,0 +1,30 @@
+@use '../common/doc' as *;
+
+.read-more-button {
+  display: none;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    background: transparent;
+    display: flex;
+    cursor: pointer;
+    padding: 0;
+    gap: 8px;
+    font-size: 16px;
+    border: none;
+    width: fit-content;
+    font-family: inherit;
+    color: inherit;
+    align-items: center;
+    transition: 0.3s ease;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  &__image {
+    &.expanded {
+      transform: rotate(180deg);
+    }
+  }
+}

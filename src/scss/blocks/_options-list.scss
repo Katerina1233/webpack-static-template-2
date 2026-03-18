@@ -1,0 +1,30 @@
+@use "../common/variables" as *;
+
+.options-list {
+    &__item {
+        cursor: pointer;
+        letter-spacing: -0.2px;
+        transition: 0.3s ease;
+
+        &:hover {
+            color: $color-text-secondary;
+        }
+
+        &--checked {
+            color: $color-text-secondary;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -24px;
+                top: -5px;
+                width: 4px;
+                height: 32px;
+                background-color: $color-accent;
+                border-radius: 0 4px 4px 0;
+            }
+        }
+    }
+}
+

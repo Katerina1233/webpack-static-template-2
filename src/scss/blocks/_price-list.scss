@@ -1,0 +1,74 @@
+@use '../common/doc' as *;
+
+.price-list {
+  &__category {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 16px;
+    width: 260px;
+    height: 200px;
+    padding: 16px;
+    background-color: $color-white;
+    border-radius: 6px;
+    border: 1px solid $color-border;
+    cursor: pointer;
+    transition: 0.3s ease;
+    position: relative;
+
+    @media  screen and (min-width: $breakpoint-tablet) {
+      width: 100%;
+      height: auto;
+      display: grid;
+      grid-template-columns: 1fr minmax(85px, auto) minmax(85px, auto) auto;
+      align-items: center;
+      border: none;
+      border-radius: unset;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        height: 1px;
+        background-color: $color-border;
+      }
+
+      &:first-child {
+        border-radius: 6px 6px 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 6px 6px;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    @media  screen and (min-width: $breakpoint-desktop) {
+      grid-template-columns: 1fr minmax(230px, auto) minmax(200px, auto) auto;
+      padding: 16px 24px;
+    }
+  }
+
+  &__block-titles {
+    display: none;
+    padding: 16px 16px 16px 16px;
+    color: $color-text-secondary;
+    font-size: 14px;
+
+    @media screen and (min-width: $breakpoint-tablet){
+      display: grid;
+      grid-template-columns: 1fr minmax(100px, auto) minmax(225px, auto);
+    }
+
+    @media screen and (min-width: $breakpoint-desktop){
+      display: grid;
+      grid-template-columns: 1fr minmax(248px, auto) minmax(345px, auto);
+    }
+  }
+}

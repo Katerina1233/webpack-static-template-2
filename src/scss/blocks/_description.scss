@@ -1,0 +1,13 @@
+@use '../common/doc' as *;
+
+.description {
+  &__text {
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    line-height: 18px;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      line-height: 20px;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@use '../common/doc' as *;
+
+.footer {
+  background-color: $color-background;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 60px 4px 20px 4px;
+  color: $color-text-secondary;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    padding: 80px 24px 25px 24px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    padding: 83px 33px 21px 31px;
+    grid-column: 2/3;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+
+    &:first-child {
+      @media screen and (min-width: $breakpoint-tablet) {
+        text-align: start;
+        max-width: 218px;
+      }
+    }
+
+    &:last-child {
+      @media screen and (min-width: $breakpoint-tablet) {
+        text-align: end;
+        max-width: 218px;
+      }
+
+      @media screen and (min-width: $breakpoint-desktop) {
+        text-align: end;
+        max-width: 330px;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      vertical-align: top;
+    }
+  }
+}

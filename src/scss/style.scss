@@ -1,17 +1,38 @@
-$bgColor: #24292e;
-$text: #fff;
+// 1. Переменные и функции
+@use "common/variables" as *;
 
-@font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
+// 2. Базовые стили
+@use "common/reset";
+@use "common/fonts";
+@use "common/doc";
 
-body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
-}
+// 3. Блоки
+@use "blocks/action";
+@use "blocks/brand-list";
+@use "blocks/button";
+@use "blocks/callback-fields";
+@use "blocks/callback";
+@use "blocks/category-block";
+@use "blocks/contacts";
+@use "blocks/content";
+@use "blocks/description";
+@use "blocks/different-technics";
+@use "blocks/feedback-fields";
+@use "blocks/feedback";
+@use "blocks/footer";
+@use "blocks/gradient-wrapper";
+@use "blocks/header";
+@use "blocks/language";
+@use "blocks/modal-input";
+@use "blocks/modal-textarea";
+@use "blocks/options-list";
+@use "blocks/price-list";
+@use "blocks/prices";
+@use "blocks/read-more-button";
+@use "blocks/repair-block";
+@use "blocks/repair-brands";
+@use "blocks/services-list";
+@use "blocks/services";
+@use "blocks/side-menu";
+@use "blocks/swiper";
+@use "blocks/technics-list";

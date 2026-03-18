@@ -1,0 +1,40 @@
+@use '../common/doc' as *;
+
+.callback {
+  visibility: hidden;
+  transform: translateX(120%);
+  display: flex;
+  position: fixed;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  top: 0;
+  right: 0;
+  background-color: $color-white;
+  width: 320px;
+  height: 100%;
+  z-index: 100;
+  box-shadow: -16px 0 20px $color-shadow;
+  transition: transform 0.3s ease, visibility 0.3s ease;
+
+  &.open {
+    visibility: visible;
+    transform: translateX(0);;
+  }
+
+  @media screen and (min-width: $breakpoint-tablet){
+    width: 440px;
+    padding: 40px 32px;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    margin-block: 40px 24px;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      margin-top: 0;
+    }
+
+  }
+}

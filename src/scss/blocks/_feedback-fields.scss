@@ -1,0 +1,39 @@
+@use '../common/doc' as *;
+
+.feedback-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 96px;
+    bottom: 0;
+    width: 4px;
+    height: 40px;
+    background-color: $color-accent;
+    border-radius: 0 4px 4px 0;
+
+    @media screen and (min-width: $breakpoint-tablet){
+      top: 32px;
+    }
+  }
+
+  &__disclaimer {
+    font-size: 14px;
+  }
+
+  &__link {
+    color: $color-primary;
+    text-decoration: none;
+  }
+
+  &__button {
+    position: static !important;
+    align-self: flex-end;
+    margin-top: 10px;
+  }
+}

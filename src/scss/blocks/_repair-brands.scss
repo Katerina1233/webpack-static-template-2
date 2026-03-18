@@ -1,0 +1,100 @@
+@use '../common/doc' as *;
+
+.repair-brands {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-background;
+    padding-bottom: 24px;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        padding-bottom: 32px;
+    }
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        padding-bottom: 50px;
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: normal;
+        text-transform: uppercase;
+        margin: 16px;
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            margin-left: 24px;
+        }
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            margin-left: 32px;
+        }
+    }
+
+    &__brand-list {
+        margin: 0;
+        padding: 16px;
+        height: 100px;
+        position: relative;
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            height: auto;
+            padding: 24px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: -2px;
+            top: 10px;
+            bottom: 0;
+            width: 28px;
+            height: 82px;
+            background: linear-gradient(to right, transparent, $color-background);
+            pointer-events: none;
+            z-index: 1000;
+        }
+    }
+
+    &__wrapper {
+        @media screen and (min-width: $breakpoint-tablet) {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(224px, 1fr));
+            grid-template-rows: 72px 72px;
+            max-height: calc(72px*2 + 16px);
+            column-gap: 24px;
+            row-gap: 16px;
+            overflow-y: hidden;
+
+            &.expanded {
+                grid-template-rows: repeat(auto-fit, 72px);
+                max-height: none;
+                overflow-y: visible;
+            }
+        }
+
+        @media screen and (min-width: 1440px) {
+            grid-template-columns: repeat(4, minmax(240px, 1fr));
+            column-gap: 32px;
+        }
+    }
+
+    &__pagination {
+        @media screen and (min-width: $breakpoint-tablet) {
+            display: none;
+        }
+
+        &-bullet {
+            background-color: #b5b3b3;
+        }
+    }
+
+    &__read-more-button {
+        @media screen and (min-width: $breakpoint-tablet) {
+            margin-left: 24px;
+        }
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            margin-left: 32px;
+        }
+    }
+}
+

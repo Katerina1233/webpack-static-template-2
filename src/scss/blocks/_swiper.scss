@@ -1,0 +1,10 @@
+@use '../common/doc' as *;
+
+.swiper {
+    &-pagination {
+        &-bullet {
+            background-color: #b5b3b3;
+        }
+    }
+}
+

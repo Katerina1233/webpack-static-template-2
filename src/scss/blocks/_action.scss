@@ -1,0 +1,10 @@
+@use '../common/doc' as *;
+
+.action {
+  &__label {
+    @media screen and (min-width: $breakpoint-desktop) {
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}

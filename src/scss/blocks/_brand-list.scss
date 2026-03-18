@@ -1,0 +1,170 @@
+@use '../common/doc' as *;
+
+/* ОБЁРТКА БЛОКА */
+.brands {
+  padding: 24px 16px;
+  max-width: 1120px;
+  margin: 0 auto;
+  background: #f8f8f8;
+
+  @media (min-width: 768px) {
+    margin-top: 50px;
+  }
+
+  /* Заголовок */
+  &__title {
+    background: linear-gradient(450deg, #f8f8f8 0%, #ffffff 98.61%);
+    border-top: 1px solid #d9fff5;
+
+    &-text {
+      font-family: TT Lakes;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      text-transform: uppercase;
+      padding: 0 20px 20px;
+      color: #7e7e82;
+    }
+  }
+
+  /* СЛАЙДЕР */
+  &__slider {
+    width: 240px;
+    margin-bottom: 10px;
+
+    .swiper-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-pagination {
+      z-index: 0;
+      bottom: auto !important;
+      top: -20px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: rgba(181, 182, 188, 1);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      opacity: 0;
+    }
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  /* ГРИД КАРТОЧЕК */
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: visible;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @media (min-width: 1120px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* КНОПКА ПОКАЗАТЬ/СКРЫТЬ */
+  &__toggle {
+    display: none;
+    font-family: TT Lakes;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background: #f8f8f8;
+    margin: 20px;
+    padding: 10px;
+    transition: 0.3s;
+
+    &::before {
+      content: "";
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      background: url("../img/unwrap.svg") no-repeat center;
+      margin-right: 8px;
+    }
+
+    &.expanded::before {
+      background-image: url("../img/rollup.svg");
+    }
+
+    &:hover {
+      scale: 1.1;
+    }
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+/* КАРТОЧКА БРЕНДА */
+.brands-card {
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  min-width: 224px;
+  height: 72px;
+  margin: 0 10px;
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+
+  @media (min-width: 768px) {
+    width: 224px;
+  }
+
+  @media (min-width: 1120px) {
+    width: 240px;
+  }
+
+  &__img {
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--lenovo { width: 108px; background-image: url("../img/Lenovo.svg"); }
+    &--samsung { width: 116px; background-image: url("../img/SAMSUNG.svg"); }
+    &--apple { width: 44px; background-image: url("../img/Apple.svg"); }
+    &--vievSonic { width: 128px; background-image: url("../img/ViewSonic.svg"); }
+    &--bosch { width: 128px; background-image: url("../img/BOSCH.svg"); }
+    &--hp { width: 52px; background-image: url("../img/hp.svg"); }
+    &--acer { width: 94px; background-image: url("../img/acer.svg"); }
+    &--sony { width: 128px; background-image: url("../img/SONY.svg"); }
+  }
+
+  &__button {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--color-pink);
+    background: url("../img/go.svg") no-repeat center;
+    background-color: var(--color-white);
+    position: relative;
+    top: 5px;
+  }
+
+  &--extra {
+    display: none;
+
+    @media (min-width: 1120px) {
+      display: flex !important;
+    }
+  }
+
+  &--hidden {
+    display: none;
+  }
+}

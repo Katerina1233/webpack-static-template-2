@@ -1,0 +1,97 @@
+@use '../common/doc' as *;
+
+.repair-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: $color-background;
+    padding-top: 24px;
+    padding-bottom: 35px;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        flex-direction: row;
+        gap: 48px;
+        padding: 32px 24px 40px 0;
+    }
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        gap: 36px;
+        padding: 16px 28px 49px 0;
+    }
+
+    &__description-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+        max-height: 90px;
+        overflow-y: hidden;
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            padding-left: 24px;
+            padding-right: 0;
+            max-height: 160px;
+        }
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            padding-left: 34px;
+        }
+
+        &.expanded {
+            max-height: none;
+            overflow-y: visible;
+        }
+    }
+
+    &__read-more-button {
+        background: transparent;
+        display: flex;
+        cursor: pointer;
+        width: fit-content;
+        padding: 0;
+        gap: 8px;
+        font-size: 16px;
+        border: none;
+        font-family: inherit;
+        color: inherit;
+        align-items: center;
+        transition: 0.3s ease;
+        margin-left: 16px;
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            margin-left: 24px;
+        }
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            margin-left: 32px;
+        }
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+
+    &__picture {
+        min-width: 320px;
+        height: auto;
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            min-width: 360px;
+            border-radius: 2%;
+        }
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            min-width: 531px;
+            border-radius: 2%;
+        }
+    }
+}
+
+

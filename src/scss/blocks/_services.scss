@@ -1,0 +1,68 @@
+@use '../common/doc' as *;
+
+.services {
+    padding-top: 24px;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 24px;
+        background: linear-gradient(to right, transparent, $color-background);
+        pointer-events: none;
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            display: none;
+        }
+    }
+
+    &__title {
+        padding-left: 16px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: $color-accent;
+            border-radius: 0 4px 4px 0;
+        }
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            padding-left: 24px;
+        }
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 32px;
+            padding-right: 25px;
+        }
+    }
+
+    &__actions {
+        display: none;
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            display: flex;
+            gap: 32px;
+        }
+    }
+
+    &__action {
+        @media screen and (min-width: $breakpoint-desktop) {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+}
+
+

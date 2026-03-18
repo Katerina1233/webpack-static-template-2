@@ -1,0 +1,81 @@
+@use '../common/doc' as *;
+
+.different-technics {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-background;
+  padding-bottom: 24px;
+
+  &__title {
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 16px;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      margin-left: 24px;
+    }
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      margin-left: 32px;
+    }
+  }
+
+  &__technics-list {
+    margin: 0;
+    padding: 16px;
+    position: relative;
+    height: 188px;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      height: auto;
+      padding: 24px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: 14px;
+      bottom: 0;
+      width: 28px;
+      height: 160px;
+      background: linear-gradient(to right, transparent, $color-background);
+      pointer-events: none;
+      z-index: 1000;
+    }
+  }
+
+  &__wrapper {
+    @media screen and (min-width: $breakpoint-tablet) {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(224px, 1fr));
+      grid-template-rows: 1fr;
+      max-height: 160px;
+      column-gap: 24px;
+      row-gap: 16px;
+      overflow-y: hidden;
+
+      &.expanded {
+        grid-template-rows: repeat(auto-fit, 160px);
+        max-height: none;
+        overflow-y: visible;
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      grid-template-columns: repeat(4, minmax(240px, 1fr));
+      column-gap: 32px;
+    }
+  }
+
+  &__read-more-button {
+    @media screen and (min-width: $breakpoint-tablet) {
+      margin-left: 24px;
+    }
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      margin-left: 32px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use '../common/doc' as *;
+
+.category-block {
+
+  &__title {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: $color-text-secondary;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      display: none;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+  }
+}

@@ -1,0 +1,36 @@
+@use '../common/doc' as *;
+
+.technics-list {
+
+  &__technic {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 240px;
+    height: 160px;
+    padding: 16px;
+    background-color: $color-white;
+    border-radius: 6px;
+    border: 1px solid $color-border;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      width: auto;
+
+      &:hover {
+        background-color: #e8e6e6;
+      }
+    }
+
+    img {
+      align-self: end;
+    }
+  }
+
+  &__item {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}

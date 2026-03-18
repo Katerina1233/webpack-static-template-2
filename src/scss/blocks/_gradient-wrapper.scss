@@ -1,0 +1,5 @@
+@use '../common/doc' as *;
+
+.gradient-wrapper {
+  background: linear-gradient(to right, $color-background, $color-white);
+}
